@@ -27,7 +27,6 @@ int CountTwo (int [] array) {
     }
     return count;
 }
-
 int SumForOdd (int [] array) {
     int sum = 0;
     for (int i=0; i<array.Length; i=i+2) {
@@ -35,7 +34,24 @@ int SumForOdd (int [] array) {
     }
     return sum;
 }
-
+int ReturnMax (int [] array) {
+    int max = array [0];
+    for (int i=0; i<array.Length; i++) {
+        if (max < array [i]) {
+            max = array [i];
+        }
+    }
+    return max;
+}
+int ReturnMin (int [] array) {
+    int min = array [0];
+    for (int i=0; i<array.Length; i++) {
+        if (min > array [i]) {
+            min = array [i];
+        }
+    }
+    return min;
+}
 //Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
 
@@ -49,9 +65,15 @@ Console.WriteLine ($"Количество четных элементов в м�
 //Задайте одномерный массив, заполненный случайными числами. 
 //Найдите сумму элементов, стоящих на нечётных позициях.
 
+/*
 int [] RandomArray = CreateRandomArray(10,0,10);
 Console.WriteLine (String.Join(" ", RandomArray));
 Console.WriteLine ($"Сумма элементов на нечетных позициях: {SumForOdd(RandomArray)}");
+*/
 
 //Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
+
+int [] RandomArray = CreateRandomArray(10,0,999);
+Console.WriteLine (String.Join(" ", RandomArray));
+Console.WriteLine ($"Разница между минимальным и максимальным элементами массива: {ReturnMax(RandomArray)-ReturnMin(RandomArray)}");
